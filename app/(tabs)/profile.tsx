@@ -14,7 +14,9 @@ export default function ProfileScreen() {
     }
     // Check for email-based avatar (Gravatar)
     if (user?.email) {
-      return `https://ui-avatars.com/api/?name=${encodeURIComponent(user.user_metadata?.full_name || user.email)}&size=200&background=7c3aed&color=ffffff&bold=true`;
+      return `https://ui-avatars.com/api/?name=${encodeURIComponent(
+        user.user_metadata?.full_name || user.email
+      )}&size=200&background=7c3aed&color=ffffff&bold=true`;
     }
     return null;
   };
@@ -46,7 +48,7 @@ export default function ProfileScreen() {
           <Image
             source={{ uri: avatarUrl }}
             className="w-24 h-24 rounded-full mb-4"
-            style={{ borderWidth: 3, borderColor: '#7c3aed' }}
+            style={{ borderWidth: 3, borderColor: "#7c3aed" }}
           />
         ) : (
           <View className="w-24 h-24 bg-purple-600 rounded-full items-center justify-center mb-4">
